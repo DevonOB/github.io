@@ -363,7 +363,7 @@ const router = new Router(routes);
         const main = document.querySelector("main");
         main.innerHTML = "";
 
-        main .insertAdjacentHTML(
+        main.insertAdjacentHTML(
             "beforeend",
             `<button id = "AboutUseBtn" class ="btn btn-primary">About us</button>
             
@@ -391,20 +391,15 @@ const router = new Router(routes);
         // Add Call to weathermap.org
         DisplayWeather();
 
-        // Add content to the main element in index.html
-        // Position , Content
-        document
-            .querySelector("main")
-            .insertAdjacentHTML(
-                "beforeend",
-                `<p id="mainParagraph" class="mt-3">This is the first paragraph</p>`
-            );
 
-        // Add Article with paragraph content into the body in index.html
-        document.body.insertAdjacentHTML(
+        const body = document.getElementById("BodyParagraph");
+        // Add Article with body paragraph content into the body in index.html
+        if (!body) {
+            document.body.insertAdjacentHTML(
             "beforeend",
-            `<article class="container"><p id="ArticleParagraph" class="mt-3">This is my article paragraph</p></article>`
-        );
+            `<article class="container"><p id="BodyParagraph" class="mt-3">This is my Body paragraph</p></article>`);
+        }
+
     }
 
     function DisplayAboutPage() {
